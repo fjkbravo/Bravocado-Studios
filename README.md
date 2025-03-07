@@ -1,4 +1,7 @@
 PCA Website; BravocadoStudios - About Me, Hobbies, Feature/Game
+
+Full link : https://fjkbravo.github.io/BravocadoStudios/
+
 Title floats
 h3 has blinking feature as a memo kind of thing
 All links are listening for events/ interactive in some way
