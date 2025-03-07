@@ -1,0 +1,419 @@
+body{
+    background-color: rgba(255, 238, 168, 0.805);
+    background: url("Bravobackground7.jpeg");
+    background-size:88%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:local;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+h1{ /* Bravocado Studios + floating effect*/
+    text-align: center;
+    margin-bottom: 0px;
+    font-family: monaco, monospace;
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: -3px -3px 0 #7e7e7e;
+    z-index: 10;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+h2{ /* "Desing by.." */
+    text-align: center;
+    font-size: 14px;
+    margin-top: 0px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+h3 {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 75%;
+    opacity: 1;
+    transition: opacity 2s ease;
+    background-color: #7e7e7e14;
+}
+
+
+#Link1{
+    font-weight: bold;
+    position: relative;
+    top: 180px;
+    right: 30%;
+    text-decoration: none;
+    color: white;
+    text-shadow: -3px -3px 0 #000000;
+}
+#Link1:hover {
+    color: yellow;
+}
+.Link1{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: Andale Mono, monospace;
+    font-size: 30px;
+}
+#Link2{
+    font-weight: bold;
+    position: relative;
+    top: 220px;
+    right: 30%;
+    text-decoration: none;
+    color: white;
+    text-shadow: -3px -3px 0 #000000;
+}
+#Link2:hover{
+    color: yellow;
+}
+.Link2{
+    font-family: Andale Mono, monospace;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#Link3{
+    font-weight: bold;
+    position: relative;
+    top: 260px;
+    right: 30%;
+    text-decoration: none;
+    color: white;
+    text-shadow: -3px -3px 0 #000000;
+}
+#Link3:hover{
+    color: yellow;
+}
+.Link3{
+    margin-top: 0px;
+    margin-bottom: 1px;
+    font-family: Andale Mono, monospace;
+    font-size: 30px;
+}
+#Link1content{ /* Bio/ intro, Jobin + Canelo links */
+    opacity: 0;
+    position: relative;
+    top: 190px;
+    max-height: 0;
+    overflow:hidden;
+    transition: opacity 2s ease, max-height 2s ease, padding 2s ease;
+    margin: 0;
+    text-align:center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 22px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0 5px;
+}
+
+#Link1content.visible{
+    opacity: 1;
+    max-height: 1000px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+#Jobin, #Canelo{ /* Links */
+    color: white;
+    position: relative;
+}
+
+#Jobin:hover,
+#Canelo:hover{
+    color: yellow;
+}
+
+#Jobin:hover::after,
+#Canelo:hover::after { /* Pics when hovering over links + adds room to show pics */
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    z-index: 10;
+    margin-top: 10px;
+}
+#Jobin:hover::after{
+    background-image: url("Jobin.jpeg")
+}
+#Canelo:hover::after{
+    background-image: url("Canelo.jpeg")
+}
+#Link2container{ /* Hobbies/Interests + Music Playlist */
+    opacity: 0;
+    position: relative;
+    top: 230px;
+    max-height: 0;
+    overflow:hidden;
+    transition: opacity 2s ease, max-height 2s ease, padding 2s ease;
+    margin:0;
+    text-align:center;  
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0 5px;
+}
+
+#Link2container.visible{
+    opacity: 1;
+    max-height: 1000px;
+}
+#playlist{
+    position: relative;
+    color: white;
+}
+#playlist:hover{
+    color: yellow;
+}
+.playlistCaption{
+    visibility: hidden;
+    position: absolute;
+    background-color: rgba(255, 238, 168);
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+#playlist:hover .playlistCaption {
+    visibility: visible;
+    opacity: 1;
+}
+
+#playlistContent{
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 2s ease, height 2s ease;
+}
+#playlistContent.visible{
+    opacity: 1;
+    height: auto;
+}
+
+#Link3content{ /* Feature */
+    opacity: 0;
+    position: relative;
+    top: 270px;
+    max-height: 0;
+    overflow:hidden;
+    transition: opacity 2s ease, max-height 2s ease, padding 2s ease;
+    margin:0;
+    text-align:center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 22px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0 5px;
+}
+
+#Link3content.visible{
+    opacity: 1;
+    max-height: 1000px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+#magic8ballLink{
+    color: white;
+    position: relative;
+}
+
+#magic8ball{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap:20px;
+    width:100%;
+    max-width:800px;
+    margin: 0 auto;
+}
+
+.magic8ballLinkCaption{
+    visibility: hidden;
+    position: absolute;
+    background-color: rgba(255, 238, 168);
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    text-align:center;
+    font-size: 14px;
+    bottom: -155%; 
+    right: 85%;
+    transform: translateX(-50%);
+}
+#magic8ballLink:hover{
+    color: yellow;
+}
+#magic8ballLink:hover .magic8ballLinkCaption {
+    visibility: visible;
+    opacity: 1;
+}
+
+#Magic8ballcontent{ /* Black circle + fade in effect */
+ width:500px;
+ height:500px;
+ background-color: black;
+ border-radius:50%;
+ margin: 1 auto;
+ display:flex;
+ justify-content: center;
+ align-items:center;
+ color:white;
+ font-size:16px;
+ opacity:0;
+ transition: opacity 2s ease, visibility 2s ease;
+ position: relative;
+ top: 300px;
+ visibility: hidden;
+}
+#Magic8ballcontent.visible{
+    opacity: 1;
+    visibility: visible;
+}
+#Magic8ballcontent::before{ /* White circle + fade in effect */
+    content:"";
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 3s ease;
+}
+#Magic8ballcontent::after{ /* Number 8 */
+    content:"8";
+    font-size:80px;
+    font-weight:bold;
+    color:black;
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
+}
+#questionBox{
+    width:200px;
+    opacity: 0;
+    transition: opacity 2s ease, visibility 2s ease;
+    visibility: hidden;
+    position: relative;
+    top: 285px;
+}
+
+#questionBox textarea{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    resize: none;
+}
+#magic8ball.visible #Magic8ballcontent,
+#magic8ball.visible #questionBox,
+#magic8ball.visible #questionBoxbutton,
+#magic8ball.visible #resetbutton{ /* all show and go away at the same time */
+    opacity: 1;
+    visibility: visible;
+}
+
+#questionBoxbutton {
+    width: 112%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(183, 183, 183);
+    color: black;
+    border: black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    right: 150%;
+    bottom: 100px;
+}
+
+#questionBoxbutton:hover{
+    background-color: lightskyblue
+}
+
+#resetbutton{
+    width: 112%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(183, 183, 183);;
+    color: black;
+    border: black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    left: 150%;
+    bottom: 145px;
+}
+
+#resetbutton:hover{ /* Number 8 spinning effect */
+    background-color: lightskyblue;
+}
+@keyframes spinLeft {
+    from{
+        transform: rotate(0deg);
+    }
+    to{transform: rotate(-360deg);
+    }
+}
+#Magic8ballcontent.spin {  /* how fast of a spin */
+    animation: spinLeft .5s linear 5;
+}
+#Magic8ballcontent.blue-circle::before { 
+    background-color: blue;
+}
+
+#Magic8ballcontent.blue-circle::after { /* Answer provided styling */
+    content: attr(data-answer);
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+    opacity: 0;
+    text-align: center;
+    white-space: pre-wrap;
+}
+#Magic8ballcontent.show-answer::after{ /* Answer transition after circle is blue */
+    opacity: 1;
+    transition: opacity 1.5s ease ;
+    width:95%;
+}
