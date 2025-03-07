@@ -31,6 +31,7 @@ document.getElementById("Link1").addEventListener("click", function (event) {
     }
 });
 
+//Scroll function to have content appear for user while opening Link1,2,3
 function smoothScrollTo(targetPosition, duration) {
     const startPosition = window.scrollY;
     const distance = targetPosition - startPosition - 50;
@@ -60,8 +61,6 @@ document.getElementById("Link2").addEventListener("click", function (event) {
     if (content.classList.contains("visible")) {
         const targetPosition = content.getBoundingClientRect().top + window.scrollY;
         smoothScrollTo(targetPosition, 2000); 
-    } else {
-        playlist.classList.remove("visible");
     }
 });
 
@@ -92,10 +91,11 @@ document.getElementById("Link3").addEventListener("click", function (event) {
 
 //Answers produced by magic8ball
 const possibleAnswers = [
+    "Concentrate and ask again...", 
     "It is certain!",
     "It is decidedly so!",
     "Without a doubt!",
-    "Yes - definitely!",
+    "Yes, definitely!",
     "You may rely on it!",
     "As I see it, yes!",
     "Most likely!",
@@ -106,12 +106,12 @@ const possibleAnswers = [
     "Ask again later...",
     "Better not tell you now...",
     "Cannot predict now...",
-    "Concentrate and ask again...",
     "Don't count on it",
     "My reply is no",
     "My sources say no",
     "Outlook not so good",
     "Very doubtful"
+   
 ];
 
 //Opens black circle and all contents when magic8ball link is clicked
@@ -132,8 +132,12 @@ document.getElementById("questionBoxbutton").addEventListener("click", function 
     event.preventDefault();
     const magic8Ball = document.getElementById("Magic8ballcontent");
 
+    magic8Ball.classList.remove("shake");
+    void magic8Ball.offsetWidth;
+    magic8Ball.classList.add("shake");
+
     magic8Ball.classList.remove("blue-circle", "show-answer");
-    magic8Ball.classList.add("spin");
+
     magic8Ball.addEventListener("animationend", function () {
         const randomAnswer = possibleAnswers[Math.floor(Math.random() * possibleAnswers.length)]
         magic8Ball.classList.add("blue-circle");
@@ -144,7 +148,7 @@ document.getElementById("questionBoxbutton").addEventListener("click", function 
     }, { once: true });
 });
 
-//Reset button instructions > Clears question box > Transitions blue circle back to white with number 8 > resets spin effect above for new answer
+//Reset button instructions > Clears question box > Transitions blue circle back to white with number 8 > resets shake effect for new answer
 document.getElementById("resetbutton").addEventListener("click", function (event) {
     event.preventDefault();
 
@@ -152,8 +156,8 @@ document.getElementById("resetbutton").addEventListener("click", function (event
     textarea.value = "";
 
     const magic8Ball = document.getElementById("Magic8ballcontent");
-    magic8Ball.classList.remove("spin"); 
-    magic8Ball.classList.remove("blue-circle");
+    magic8Ball.classList.remove("shake", "blue-circle", "show-answer");
+    
     magic8Ball.style.animation = "none"; 
     void magic8Ball.offsetWidth; 
     magic8Ball.style.animation = null; 
